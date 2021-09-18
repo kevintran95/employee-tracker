@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kevintran95/employee-tracker#readme",
   "dependencies": {
+    "ctable": "0.0.3",
     "express": "^4.17.1",
     "inquirer": "^8.1.5",
     "mysql2": "^2.3.0"
