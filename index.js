@@ -51,7 +51,7 @@ function homePage() {
                     viewRoles();
                     break;
 
-                case "View all emplyoees":
+                case "View all employees":
                     viewEmployee();
                     break;
 
@@ -71,6 +71,33 @@ function homePage() {
                     break;
             }
         })
+}
+
+const viewAllDept = () => {
+    const sql = "SELECT * FROM department";
+    
+    db.query(sql, (err, rows) => {
+        console.table(res);
+        homePage();
+    });
+}
+
+const viewAllRoles = () => {
+    const sql = "SELECT * FROM role";
+
+    db.query(sql, (err, rows)=> {
+        console.table(res);
+        homePage();
+    });
+}
+
+const viewAllEmployees = () => {
+    const sql = "SELECT * FROM employee";
+    
+    db.query(sql, (err, rows) => {
+        console.table(res);
+        homePage();
+    });
 }
 
 
