@@ -100,6 +100,49 @@ const viewAllEmployees = () => {
     });
 }
 
+const addDepartment = () => {
+    inquirer 
+    .prompt({
+        type:'input',
+        message:'Enter the department you want to add',
+        name:'newDepart'
+    }
+       .then((reply) => {
+           const sql = `INSERT INTO departments (name) VALUE(?) `;
+           let newDepart = reply.newDepart;
+
+           db.query(sql, newDepart, (err, rows) => {
+               console.log(`${newDepart} department was successfully added `);
+               console.log('/n');
+               init();
+           })
+       })
+    )
+}
+
+const addRole = () => {
+    inquirer
+    .prompt([
+        {
+            type:'input',
+            message:'Please enter the name of the role',
+            name:'newRole'
+        },
+        {
+            type:'input',
+            message:'Enter employees salary',
+            name:'newSalary'
+        },
+        {
+            type:'input',
+            message:'Enter the department ID',
+            name:'departments_id'
+        }
+    ])
+    .then((reply) => {
+        const sql = 
+    })
+}
 
 
 
@@ -108,4 +151,3 @@ const viewAllEmployees = () => {
 // Listen if port is connected
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-});
